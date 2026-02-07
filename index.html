@@ -1,20 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>推し活管理</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推し活管理アプリ</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        input, button {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>推し活ダッシュボード</h1>
+<h1>推し活管理</h1>
 
-<ul>
-  <li>ブログ更新チェック</li>
-  <li>推しに使った金額</li>
-  <li>遠征メモ</li>
-  <li>会場アクセス</li>
-</ul>
+<!-- 推しブログ更新 -->
+<div class="card">
+    <h2>推しブログチェック</h2>
+    <p>※あとで通知機能追加予定</p>
+</div>
+
+<!-- 支出管理 -->
+<div class="card">
+    <h2>推しに使った金額</h2>
+
+    <input type="number" id="moneyInput" placeholder="金額を入力">
+    <button onclick="addMoney()">追加</button>
+
+    <p>合計：<span id="totalMoney">0</span> 円</p>
+</div>
+
+<!-- 遠征メモ -->
+<div class="card">
+    <h2>遠征メモ</h2>
+
+    <input type="text" id="tripInput" placeholder="新幹線・ホテルなど">
+    <button onclick="addTrip()">追加</button>
+
+    <ul id="tripList"></ul>
+</div>
+
+<!-- 会場アクセス -->
+<div class="card">
+    <h2>会場アクセスメモ</h2>
+
+    <input type="text" id="placeInput" placeholder="会場名・アクセス">
+    <button onclick="addPlace()">追加</button>
+
+    <ul id="placeList"></ul>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
